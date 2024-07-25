@@ -5,6 +5,7 @@ from fastapi import FastAPI,HTTPException
 import numpy as np
 from pydantic import BaseModel
 import joblib
+from pathlib import Path
 
 
 # ------------------------------------------------------- 
@@ -83,9 +84,8 @@ def encode_categorical_feature(feature, value):
 # ------------------------------------------------------- 
 # Load the model on app setup
 # ------------------------------------------------------- 
-model_path = r"C:\Users\ROYAL COMPUTER\Desktop\02-Model_with_fastapi\best_model.pkl"  # Chemin vers votre modèle
+model_path = Path(__file__).parent / "best_model.pkl"
 model = load_model(model_path)
-
 # ------------------------------------------------------- 
 # First route
 # ------------------------------------------------------- 
