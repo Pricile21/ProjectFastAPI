@@ -75,7 +75,7 @@ input_data = {
 if st.sidebar.button("Predict Churn"):
     with st.spinner("Analyzing the input..."):
         # Send the input data to the backend API
-        response = requests.post("http://localhost:8000/predict", json=input_data)
+        response = requests.post("https://projectfastapi-3.onrender.com/docs", json=input_data)
         result = response.json()
 
         # Display the result
